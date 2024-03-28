@@ -34,7 +34,7 @@ export const createAPIHandler = async (config, retries = 0) => {
     logger.info("Creating API Handler", winstonLabel);
     // Determine the correct set of endpoints based on the network prefix.
     const endpoints =
-      config.global.networkPrefix === 2 || config.global.networkPrefix === 0
+      config.global.networkPrefix === 2 || config.global.networkPrefix === 0 || config.global.networkPrefix === 42
         ? config.global.apiEndpoints
         : Constants.LocalEndpoints;
 
