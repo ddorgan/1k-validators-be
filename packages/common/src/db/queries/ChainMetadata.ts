@@ -8,8 +8,10 @@ export const setChainMetadata = async (
       networkPrefix === 2
         ? "Kusama"
         : networkPrefix === 0
-          ? "Polkadot"
-          : "Local Testnet";
+            ? "Polkadot"
+              : networkPrefix === 42
+	          ? "Westend"
+                  : "Local Testnet";
     const decimals = networkPrefix === 2 ? 12 : networkPrefix === 0 ? 10 : 12;
 
     const existingMetadata = await ChainMetadataModel.findOne({
