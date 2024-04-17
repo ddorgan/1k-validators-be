@@ -21,7 +21,12 @@
     "forceClientVersion": "v0.9.30",
     "minSelfStake": 10000000000000,
     "commission": 150000000,
-    "unclaimedEraThreshold": 4
+    "unclaimedEraThreshold": 4,
+    "sanctionedGeoArea": {
+      "skip": false,
+      "sanctionedCountries": ["XXX"],
+      "sanctionedRegions": ["XXX"]
+    }
   },
   "cron": {
     "monitor": "0 */15 * * * *",
@@ -131,5 +136,12 @@
       "0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe"
     ],
     "host": "wss://telemetry-backend.w3f.community/feed"
+  },
+  "logger": {
+    "level": "info",
+    "excludedLabels": [
+      "Location",
+      "ValidatorPrefJob"
+    ]
   }
 }

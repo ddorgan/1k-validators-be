@@ -88,6 +88,7 @@ export enum InvalidityReasonType {
   KUSAMA_RANK = "KUSAMA_RANK",
   PROVIDER = "PROVIDER",
   BEEFY = "BEEFY",
+  SANCTIONED_GEO_AREA = "SANCTIONED_GEO_AREA",
 }
 
 export interface InvalidityReason {
@@ -117,6 +118,7 @@ export const InvalidityReason = new Schema({
       "KUSAMA_RANK",
       "PROVIDER",
       "BEEFY",
+      "SANCTIONED_GEO_AREA",
     ],
     default: "NEW",
   },
@@ -332,7 +334,7 @@ export const CandidateSchema = new Schema({
   offlineSince: { type: Number, default: 0 },
   // The cumulative duration of offline time (in ms).
   offlineAccumulated: { type: Number, default: 0 },
-  // The timestamp for the most recent time the node has come online.
+  // The timestamp for the most recent time the node has come online. TOFIX: wrong name, SINCE is misleading -> lastSeenOnline
   onlineSince: { type: Number, default: 0 },
   // Whether it is running the latest client code.
   updated: { type: Boolean, default: false },

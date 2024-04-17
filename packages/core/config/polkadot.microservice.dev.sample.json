@@ -20,7 +20,12 @@
     "skipUnclaimed": true,
     "minSelfStake": 50000000000000,
     "commission": 50000000,
-    "unclaimedEraThreshold": 1
+    "unclaimedEraThreshold": 1,
+    "sanctionedGeoArea": {
+      "skip": false,
+      "sanctionedCountries": ["XXX"],
+      "sanctionedRegions": ["XXX"]
+    }
   },
   "db": {
     "mongo": {
@@ -95,5 +100,12 @@
       "0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe"
     ],
     "host": "wss://telemetry-backend.w3f.community/feed"
+  },
+  "logger": {
+    "level": "info",
+    "excludedLabels": [
+      "Location",
+      "ValidatorPrefJob"
+    ]
   }
 }

@@ -26,7 +26,12 @@
     "skipUnclaimed": true,
     "minSelfStake": 100000,
     "commission": 150000000,
-    "unclaimedEraThreshold": 4
+    "unclaimedEraThreshold": 4,
+    "sanctionedGeoArea": {
+      "skip": false,
+      "sanctionedCountries": ["XXX"],
+      "sanctionedRegions": ["XXX"]
+    }
   },
   "proxy": {
     "timeDelayBlocks": "35"
@@ -135,5 +140,12 @@
   "subscan": {
     "baseV1Url": "https://kusama.api.subscan.io/api/scan",
     "baseV2Url": "https://kusama.api.subscan.io/api/v2/scan"
+  },
+  "logger": {
+    "level": "info",
+    "excludedLabels": [
+      "Location",
+      "ValidatorPrefJob"
+    ]
   }
 }
